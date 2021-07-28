@@ -34,14 +34,16 @@ const singleRound = function (playerSelection, computerSelection) {
   // } else {
   //   console.log("tie game!");
   // }
-
-  if (playerSelection === computerSelection) {
-    console.log("tie game!");
-  } else if (selectionArray[playerSelection].win === computerSelection) {
-    console.log(selectionArray[playerSelection].winMsg);
+  let playerSelectionLC = playerSelection.toLowerCase();
+  if (playerSelectionLC === computerSelection) {
+    return "tie game!";
+  } else if (selectionArray[playerSelectionLC].win === computerSelection) {
+    return selectionArray[playerSelectionLC].winMsg;
   } else {
-    console.log(selectionArray[playerSelection].loseMsg);
+    return selectionArray[playerSelectionLC].loseMsg;
   }
 };
 
-singleRound("rock", "paper");
+console.log(singleRound("rock", "scissors"));
+
+const game = function (rounds) {};
