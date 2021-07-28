@@ -4,7 +4,7 @@ const computerPlay = function () {
     gameArray[Math.floor(Math.random() * gameArray.length)];
   return computerSelection;
 };
-
+//test
 const selectionArray = {
   rock: {
     lose: "paper",
