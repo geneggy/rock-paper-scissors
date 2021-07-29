@@ -1,8 +1,7 @@
+const computerSpan = document.querySelector(".computerSpan");
+const gameChoices = ["rock", "paper", "scissors"];
 const computerPlay = function () {
-  const gameArray = ["rock", "paper", "scissors"];
-  let computerSelection =
-    gameArray[Math.floor(Math.random() * gameArray.length)];
-  return computerSelection;
+  return gameChoices[Math.floor(Math.random() * gameChoices.length)];
 };
 //test
 const selectionArray = {
@@ -41,8 +40,15 @@ const game = function (rounds) {
   for (let i = 1; i <= rounds; i++) {
     let playerChoice = prompt("Pick rock, paper, or scissors");
     let computerChoice = computerPlay();
-
-    console.log(singleRound(playerChoice, computerChoice));
+    if (gameChoices.indexOf(playerChoice) > -1) {
+      computerSpan.innerHTML = computerChoice;
+      console.log(singleRound(playerChoice, computerChoice));
+    } else {
+      console.log(
+        "not a valid selection, please pick rock, paper, or scissors"
+      );
+      i -= 1;
+    }
   }
 };
 
