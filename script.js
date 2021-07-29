@@ -1,9 +1,5 @@
 const computerSpan = document.querySelector(".computerSpan");
 const gameChoices = ["rock", "paper", "scissors"];
-const computerPlay = function () {
-  return gameChoices[Math.floor(Math.random() * gameChoices.length)];
-};
-//test
 const selectionArray = {
   rock: {
     lose: "paper",
@@ -24,6 +20,13 @@ const selectionArray = {
     winMsg: "You win! Scissors beats Paper!",
   },
 };
+
+let scores = { player: 0, comptuter: 0 };
+
+const computerPlay = function () {
+  return gameChoices[Math.floor(Math.random() * gameChoices.length)];
+};
+//test
 
 const singleRound = function (playerSelection, computerSelection) {
   let playerSelectionLC = playerSelection.toLowerCase();
@@ -51,4 +54,4 @@ const game = function (rounds) {
   }
 };
 
-game(1);
+game(5);
