@@ -41,7 +41,6 @@ const game = function (rounds) {
     let playerChoice = prompt("Pick rock, paper, or scissors");
     let computerChoice = computerPlay();
     if (gameChoices.indexOf(playerChoice) > -1) {
-      computerSpan.innerHTML = computerChoice;
       console.log(singleRound(playerChoice, computerChoice));
     } else {
       console.log(
@@ -52,4 +51,4 @@ const game = function (rounds) {
   }
 };
 
-game(5);
+game(1);
