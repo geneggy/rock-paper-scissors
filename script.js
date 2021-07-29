@@ -9,31 +9,24 @@ const selectionArray = {
   rock: {
     lose: "paper",
     win: "scissors",
-    loseMsg: "You lose! Paper beats rock!",
+    loseMsg: "You lose! Paper beats Rock!",
     winMsg: "You win! Rock beats Scissors!",
   },
   paper: {
     lose: "scissors",
     win: "rock",
-    loseMsg: "You lose! Scissors beats paper!",
-    winMsg: "You win! Paper beats rock!",
+    loseMsg: "You lose! Scissors beats Paper!",
+    winMsg: "You win! Paper beats Rock!",
   },
   scissors: {
     lose: "rock",
     win: "paper",
-    loseMsg: "You lose! Rock beats scissors!",
-    winMsg: "You win! Scissors beats paper!",
+    loseMsg: "You lose! Rock beats Scissors!",
+    winMsg: "You win! Scissors beats Paper!",
   },
 };
 
 const singleRound = function (playerSelection, computerSelection) {
-  // if (selectionArray[playerSelection].lose === computerSelection) {
-  //   console.log("you lose!");
-  // } else if (selectionArray[playerSelection].win === computerSelection) {
-  //   console.log("you win!");
-  // } else {
-  //   console.log("tie game!");
-  // }
   let playerSelectionLC = playerSelection.toLowerCase();
   if (playerSelectionLC === computerSelection) {
     return "tie game!";
@@ -44,6 +37,13 @@ const singleRound = function (playerSelection, computerSelection) {
   }
 };
 
-console.log(singleRound("rock", "scissors"));
+const game = function (rounds) {
+  for (let i = 1; i <= rounds; i++) {
+    let playerChoice = prompt("Pick rock, paper, or scissors");
+    let computerChoice = computerPlay();
 
-const game = function (rounds) {};
+    console.log(singleRound(playerChoice, computerChoice));
+  }
+};
+
+game(5);
