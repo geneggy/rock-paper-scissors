@@ -15,16 +15,15 @@
   <body>
     <h1>Rock Paper Scissors</h1>
     <p>Make your selection!</p>
-    <button class="rockButton">Rock</button>
-    <button class="paperButton">Paper</button>
-    <button class="scissorsButton">Scissors</button>
+    <button class="rockButton playerButton" data-key='rock'>Rock</button>
+    <button class="paperButton playerButton" data-key='paper'>Paper</button>
+    <button class="scissorsButton playerButton" data-key='scissors'>Scissors</button>
+<p>Round <span class="currentRound"></span></p>
+<p class = 'playerScore'>Player: <span class='pScore'></span></p>
+<p class="computerScore">Computer: <span class="cScore"></span></p>
 
-    <p class="computerMessage">
-      Computer Picked <span class="computerSpan"></span>
-    </p>
-    <p class="gameMessage">Computer selected:</p>
-
-    <p class=""></p>
+    <p class="gameMessage"></p>
+<button class="resetButton">Reset Game</button>
 
     <script src="/script.js" async defer></script>
   </body>
